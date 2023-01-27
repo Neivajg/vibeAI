@@ -12,17 +12,30 @@ const EditUserForm = () => {
 
     const handleForm = async (e) => {
         e.preventDefault()
-
-        console.log(user.getCurrentUser().email)
-        console.log(user.getCurrentUser().username)
-        console.log(user.getCurrentUser())
+        // console.log(user.getCurrentUser().email)
+        // console.log(user.getCurrentUser().username)
     }
+     const users = user.getCurrentUser().data
+     const username = user.getCurrentUser()
 
     return (
+       
         <>
-            <h1>Hello {user.getCurrentUser().username}</h1>
-
-            <h1>Recent recommendations:</h1>
+            <h1 className='tituloSaludo'>Hello {username.username}</h1>
+            <div>
+                <h1 className='tituloRecomendaciones'>Recent recommendations:</h1>
+                    <div style={{color:"white"}}>
+                        {users.reverse().map((e)=>(
+                            <>
+                                <h4>grupo1:{e.grupo1}</h4>
+                                <h4>grupo2:{e.grupo2}</h4>
+                                <h4>recomendacion1:{e.recomendacion1}</h4>
+                                <h4>recomendacion2:{e.recomendacion2}</h4>
+                                <h4>recomendacion3:{e.recomendacion3}</h4>
+                            </>
+                        ))}
+                    </div>
+            </div>
 
             <form className='inputbox loginForm'>
                 <div className="inputbox">
