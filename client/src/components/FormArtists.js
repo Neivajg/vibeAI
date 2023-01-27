@@ -18,14 +18,14 @@ const SignUp = () => {
     const handleForm = async (e) => {
         e.preventDefault()
 
-        if (grupo1 === "" || grupo2 === "") 
-        { toast.warning("Both imputs are required")
-         return
+        if (grupo1 === "" || grupo2 === "") {
+            toast.warning("Both imputs are required")
+            return
         }
 
         const handleState = async (result) => {
             console.log(result)
-            
+
             setRecomendacion1(result.recomendacion1)
             setRecomendacion2(result.recomendacion2)
             setRecomendacion3(result.recomendacion3)
@@ -33,14 +33,14 @@ const SignUp = () => {
 
         const { Configuration, OpenAIApi } = require("openai");
         const configuration = new Configuration({
-          apiKey: "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",
+            apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
-          model: "text-davinci-003",
-          prompt: `Replace the word resultado with artists or bands similar to ${grupo1} and ${grupo2}: {"recomendacion1": resultado, "recomendacion2": resultado, "recomendacion3": resultado}`,
-          temperature: 0.1,
-          max_tokens: 300,
+            model: "text-davinci-003",
+            prompt: `Replace the word resultado with artists or bands similar to ${grupo1} and ${grupo2}: {"recomendacion1": resultado, "recomendacion2": resultado, "recomendacion3": resultado}`,
+            temperature: 0.1,
+            max_tokens: 300,
         });
         let result = await JSON.parse(response.data.choices[0].text)
         result !== undefined && handleState(result)
@@ -48,54 +48,56 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        fetch(`http://www.localhost:3000/user/add-recommendation/${user.getCurrentUser().email}`, 
-        
-        {method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            grupo1: grupo1,
-            grupo2: grupo2,
-            "recomendacion1": recomendacion1,
-            "recomendacion2": recomendacion2,
-            "recomendacion3": recomendacion3,
-            "opinion": e.currentTarget.value
-        }),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        })
-            
+        fetch(`http://www.localhost:3000/user/add-recommendation/${user.getCurrentUser().email}`,
 
-        fetch(`http://musicrec-env.eba-tvtntc4p.us-east-1.elasticbeanstalk.com/bbdd`, 
-        
-        {method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            _id:  user.getCurrentUser()._id,
-            username: user.getCurrentUser().username,
-            email: user.getCurrentUser().email,
-            sexo: user.getCurrentUser().gender,
-            ocupacion: user.getCurrentUser().occupation,
-            data: user.getCurrentUser().data[user.getCurrentUser().data.length]
-        }),
-        })
-        .then((response) => response.json())
-        .then((data) => {   
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        })
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    grupo1: grupo1,
+                    grupo2: grupo2,
+                    "recomendacion1": recomendacion1,
+                    "recomendacion2": recomendacion2,
+                    "recomendacion3": recomendacion3,
+                    "opinion": e.currentTarget.value
+                }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            })
+
+
+        fetch(`http://musicrec-env.eba-tvtntc4p.us-east-1.elasticbeanstalk.com/bbdd`,
+
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    _id: user.getCurrentUser()._id,
+                    username: user.getCurrentUser().username,
+                    email: user.getCurrentUser().email,
+                    sexo: user.getCurrentUser().gender,
+                    ocupacion: user.getCurrentUser().occupation,
+                    data: user.getCurrentUser().data[user.getCurrentUser().data.length]
+                }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            })
     }
-    
+
     return (
         <>
             <div className='login-wrapper'>
@@ -113,15 +115,15 @@ const SignUp = () => {
                     </button>
                 </form>
             </div >
-           
-            {recomendacion3 !== "" && <SpotifyArtist artist={recomendacion1}  artist2={recomendacion2} artist3={recomendacion3}/>}
-            
+
+            {recomendacion3 !== "" && <SpotifyArtist artist={recomendacion1} artist2={recomendacion2} artist3={recomendacion3} />}
+
             {<div className="likeordislike">
-                <button className="like" onClick={(e) => handleRecommendation(e)} value = "true">
+                <button className="like" onClick={(e) => handleRecommendation(e)} value="true">
 
                     <svg height="24" width="24" xmlns={"../assets/check.svg"} viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" /></svg>
                 </button>
-                <button className="dislike" onClick={(e) => handleRecommendation(e)} value = "false">
+                <button className="dislike" onClick={(e) => handleRecommendation(e)} value="false">
                     <svg height="24" width="24" xmlns={"../assets/wrong.svg"} viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" /></svg>
                 </button>
             </div>}
