@@ -29,9 +29,9 @@ const SignUp = () => {
     const handleForm = async (e) => {
 
         e.preventDefault()
+        console.log(account)
 
-        password === password2 ? 
-            await user.register(account).then(navigate("/home")) : toast.warning("Passwords must match!")
+        password === password2 ? await user.register(account).then(navigate("/home")) : toast.warning("Passwords must match!")
     }
 
     
@@ -78,7 +78,7 @@ const SignUp = () => {
                             <div className='select-input'>
                                 <span>Occupation</span>
                                 <select name="occupation" id="occupation" onChange={(event) => setOccupation(event.currentTarget.value)}>
-                                    <option value="null" disabled>Select occupation:</option>
+                                    <option value="null" selected disabled>Select occupation:</option>
                                     <option name="Employed" value="Employed">Employed</option>
                                     <option name="Self-employed" value="Self-employed">Self-employed</option>
                                     <option name="Unemployed" value="Unemployed">Unemployed</option>
@@ -91,7 +91,7 @@ const SignUp = () => {
                             <div className='select-input'>
                                 <span>Gender</span>
                                 <select name="gender" id="gender" onChange={(event) => setGender(event.currentTarget.value)}>
-                                    <option value="null" disabled>Select Gender:</option>
+                                    <option value="null" selected disabled>Select Gender:</option>
                                     <option name="Male" value="Male">Male</option>
                                     <option name="Female" value="Female">Female</option>
                                     <option name="Non-binary" value="Non-binary">Non-binary</option>

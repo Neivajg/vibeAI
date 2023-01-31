@@ -1,0 +1,48 @@
+.tituloSaludo{
+    display: flex;
+    margin: 10px auto;
+    color: rgb(201, 95, 95);
+}
+
+.tituloRecomendaciones{
+    margin: auto;
+}
+
+.ContainerProfile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 30px; 
+    margin-top: 30px;
+}
+
+.cardProfile{
+    width: 280px;
+    height: 180px;
+    background:white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 1px white;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+} 
+
+button {
+    padding: 8px 25px;
+    border-radius: 8px;
+    margin-top: 8px;
+    background:red;
+    color: white;
+    font-weight: 600;
+}
+
+.login-title{
+    color:white;
+    text-align:center;
+    font-size: 40px;
+    box-shadow: 0px 0px 5px 1px white;
+    width: 400px;
+    margin: 3% auto;
+}
+
+   

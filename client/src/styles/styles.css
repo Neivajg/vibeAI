@@ -5,44 +5,57 @@
     color: black;
     /* --main-bg-color: #525DAD; */
     --main-bg-color: #181629;
+    --color1: #140F07;
+    --color2: #0E2951;
+    --color3: #3561B9;
+    --color4: #76A6FE;
+    --color5: #CEF2F7;
 }
 
 body {
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
+    background-color: var(--color2);
 }
 
-.body {
+.bodyLanding {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
+    background-image: url(../utils/landing_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 .cardLanding {
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* min-width: 40%; */
     width: 50%;
-    height: fit-content;
-    margin-top: 5%;
+    max-height: 50%;
+    /* height: fit-content; */
     padding: 50px;
     border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+    /* background: #e0e0e0;
+    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; */
 }
 
 .title {
     text-align: center;
     font-size: 40px;
+    color: var(--color1);
 }
 
 .text {
     text-align: center;
     margin: 20px 0 20px 0;
+    color: var(--color1);
+    font-size: 18px;
 }
 
-.button {
-    background-color: #681E86;
+/* .button {
     color: white;
     font-size: 20px;
     margin-top: 10px;
@@ -50,76 +63,6 @@ body {
     border-radius: 50px;
     width: fit-content;
     cursor: pointer;
-}
-
-/* boton start now */
-
-/* .landingButton {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-}
-
-.landingButton {
-    --primary-color: #111;
-    --hovered-color: #c84747;
-    position: relative;
-    display: flex;
-    font-weight: 600;
-    font-size: 20px;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.landingButton p {
-    margin: 0;
-    position: relative;
-    font-size: 20px;
-    color: var(--primary-color)
-}
-
-.landingButton::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    left: 0;
-    bottom: -7px;
-    background: var(--hovered-color);
-    height: 2px;
-    transition: 0.3s ease-out;
-}
-
-.landingButton p::before {
-    position: absolute;
-      box-sizing: border-box;
-    content: "Start Now";
-    width: 0%;
-    inset: 0;
-    color: var(--hovered-color);
-    overflow: hidden;
-    transition: 0.3s ease-out;
-}
-
-.landingButton:hover::after {
-    width: 100%;
-}
-
-.landingButton:hover p::before {
-    width: 100%;
-}
-
-.landingButton:hover svg {
-    transform: translateX(4px);
-    color: var(--hovered-color)
-}
-
-.landingButton svg {
-    color: var(--primary-color);
-    transition: 0.2s;
-    position: relative;
-    width: 15px;
-    transition-delay: 0.2s;
 } */
 
 .landingButton {
@@ -129,9 +72,8 @@ body {
     font-weight: 600;
     font-size: 20px;
     padding: 0.8em 1.3em 0.8em 0.9em;
-    color: black;
-    background: #ad5389;
-    background: linear-gradient(to right, #ccd141, #e1ef4f, #ccdc52);
+    color: var(--color1);
+    background: linear-gradient(to right, var(--color5), var(--color4), var(--color4));
     /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
     border: none;
     letter-spacing: 0.05em;

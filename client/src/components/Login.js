@@ -11,7 +11,7 @@ const Login = () => {
     const [, dispatch] = AuthConsumer();
     const navigate = useNavigate()
 
-    const [auth] = AuthConsumer()
+    const auth = AuthConsumer()
 
     let account = {
         email: email,
@@ -20,10 +20,12 @@ const Login = () => {
 
     const handleForm = async (e) => {
         e.preventDefault()
+        console.log(account)
 
         const { isAdmin } = await user.login(account);
 
         dispatch({ type: isAdmin ? "admin" : "login" });
+        navigate("/home")
     }
 
     return (
