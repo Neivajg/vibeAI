@@ -32,7 +32,7 @@ const SignUp = () => {
 
         const { Configuration, OpenAIApi } = require("openai");
         const configuration = new Configuration({
-            apiKey: "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",
+            apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
