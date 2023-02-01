@@ -32,7 +32,7 @@ const SignUp = () => {
 
         const { Configuration, OpenAIApi } = require("openai");
         const configuration = new Configuration({
-            apiKey: "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",
+            apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
@@ -87,7 +87,7 @@ const SignUp = () => {
                         <input type="text" name="text" className="input" placeholder="Artist/Band 2" onChange={(e) => setGrupo2(e.currentTarget.value)}></input>
                     </div>
 
-                    <button className='mixupButton' onClick={(e) => handleForm(e)}>
+                    <button className='mixUpBtn' onClick={(e) => handleForm(e)}>
                         <span className="TxtEffect">Mix up</span>
                     </button>
                 </form>

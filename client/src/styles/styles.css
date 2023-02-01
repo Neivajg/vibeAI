@@ -22,10 +22,11 @@ body {
     /* justify-content: center; */
     align-items: center;
     height: 100vh;
-    background-image: url(../utils/landing_bg.png);
+    background-image: url(../assets/landing_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
+    position: relative;
 }
 
 .cardLanding {
@@ -97,4 +98,11 @@ body {
 
 .landingButton:hover span {
     transform: translateX(7px);
+}
+
+#logoLanding {
+    width: 10%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
 }

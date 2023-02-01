@@ -1,15 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import AuthConsumer from '../hooks/useAuth'
+
 import "../styles/styles.css"
+import logo from '../assets/LOGO_VIBEAI_2.png'
 
 const LandingPage = () => {
-
     const [{ isAuth }] = AuthConsumer();
+    
     return (
         <>
             <div className='bodyLanding'>
+                <img src={logo} alt='vibeAI' id='logoLanding'></img>
                 <div className='cardLanding'>
+
                     <h1 className='title'>The final Music Recommendation System</h1>
                     <br></br>
                     <p className='text'>

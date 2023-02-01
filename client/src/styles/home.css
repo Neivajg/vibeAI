@@ -121,7 +121,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /* boton mix up */
-.mixupButton {
+/* .mixupButton {
     margin-top: 20px;
     margin-bottom: 60px;
     padding: 1em 2em;
@@ -137,7 +137,40 @@ input[type=range]:focus::-ms-fill-upper {
     color: #ffc107;
     font-family: "Arial Black", Gadget, sans-serif;
     text-shadow: 0px 0px 0 rgb(227, 165, 0), 1px 1px 0 rgb(198, 136, 0), 2px 2px 0 rgb(170, 108, 0), 3px 3px 0 rgb(142, 80, 0), 4px 4px 3px rgba(0, 0, 0, 0.63), 4px 4px 1px rgba(0, 0, 0, 0.5), 0px 0px 3px rgba(0, 0, 0, .2);
+} */
+.mixUpBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #7e97b8;
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 40px 40px 40px 40px;
+    padding: 16px 24px 16px 28px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -4px -2px 10px 0px #ffffff, 4px 2px 10px 0px rgb(95 157 231 / 48%);
+    cursor: pointer;
+   }
+
+.mixUpBtn:hover {
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
 }
+
+.mixUpBtn:active {
+    box-shadow: none;
+}
+
 
 /* titulo */
 .rec-title {
