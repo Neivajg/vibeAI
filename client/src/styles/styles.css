@@ -154,3 +154,25 @@ body {
     margin-bottom: 20px;
     font-size: 18px;
 }
+
+@media screen and (max-width: 769px){
+    .text {
+        text-align: center;
+        margin: 2px;
+        color: var(--color1);
+        font-size: 12px;
+    }
+
+    .bodyLanding {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bottomLanding h2 {
+        font-size: 25px;
+        margin: 80px 50px; 
+    }
+  
+ 
+}

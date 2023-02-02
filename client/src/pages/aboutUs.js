@@ -67,7 +67,7 @@ const AboutUs = () => {
           <div className="img">
             <img src={ruben} alt='Rubén Ruiz'></img>
           </div>
-          <span> Rubén Ruiz</span>
+          <span> Rubén R. Ganga</span>
           <a href='https://www.linkedin.com/in/rub%C3%A9n-r-ganga-5559a0259/' target="_blank"> </a>
           <button>
               <i className="fa-brands fa-linkedin fa-2x"></i>
