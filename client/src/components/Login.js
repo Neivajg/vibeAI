@@ -26,7 +26,7 @@ const Login = () => {
         const { isAdmin } = await user.login(account);
 
         dispatch({ type: isAdmin ? "admin" : "login" });
-        navigate("/home");
+        navigate("/v2");
     }
 
     return (

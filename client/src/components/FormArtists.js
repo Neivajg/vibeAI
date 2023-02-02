@@ -50,7 +50,7 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        fetch(`http://www.localhost:3000/user/add-recommendation/${user.getCurrentUser().email}`,
+        fetch(`https://vibeai-jbmr.onrender.com/user/add-recommendation/${user.getCurrentUser().email}`,
 
             fetch(`http://musicrec-env.eba-tvtntc4p.us-east-1.elasticbeanstalk.com/bbdd`,
 

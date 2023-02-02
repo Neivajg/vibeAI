@@ -49,7 +49,7 @@ const LandingPage = () => {
                 </div>
 
                 <div className='bottomLanding'>
-                    <h2>HOW DOES IT WORKS</h2>
+                    <h2>HOW DOES IT WORK?</h2>
 
                     <div className='stepsCont'>
                         <div className='steps'>

@@ -62,7 +62,7 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        axios.put(`http://www.localhost:3000/user/add-recommendationv2/${user.getCurrentUser().email}`,
+        axios.put(`https://vibeai-jbmr.onrender.com/user/add-recommendationv2/${user.getCurrentUser().email}`,
             {
                 text: text,
                 gender: gender,
