@@ -1,11 +1,11 @@
 import React from 'react'
+import HomeSpoty from "../components/HomeSpoty"
 
-import "../styles/styles.css"
 
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
+      <HomeSpoty />
     </>
   );
 };

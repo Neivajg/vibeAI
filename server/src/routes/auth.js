@@ -3,7 +3,6 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const validator = require("../middleware/joiValidator");
 const express = require("express");
-const winston = require("winston/lib/winston/config");
 const router = express.Router();
 
 const reqSchema = Joi.object({
@@ -18,7 +17,6 @@ const reqSchema = Joi.object({
 
 router.post("/", validator(reqSchema), async (req, res) => {
 
-  console.log("hola")
 
   let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("Email y password invalidos");

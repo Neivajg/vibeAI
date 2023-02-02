@@ -1,11 +1,12 @@
 import React from 'react'
+import EditUserForm from "../components/EditUserForm"
 
-import "../styles/styles.css"
+
 
 const Profile = () => {
   return (
     <>
-      <h2 style={{color:'white'}}>Profile</h2>
+      <EditUserForm />
     </>
   );
 };

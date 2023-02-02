@@ -5,6 +5,7 @@ const cors = require('cors');
 
 
 const login = require('../routes/auth')
+const user = require('../routes/user')
 const registro = require('../routes/registro')
 const errors = require('../middleware/errors')
 
@@ -19,6 +20,7 @@ module.exports = function (app) {
 
     app.use('/login', login)
     app.use('/signup', registro)
+    app.use('/user', user)
     
 
 //PING

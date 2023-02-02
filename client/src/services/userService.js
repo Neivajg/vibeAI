@@ -2,17 +2,18 @@ import jwt_decode from "jwt-decode";
 import http from "./httpService";
 import config from "../config.json";
 import { toast } from "react-toastify";
-import {useNavigate} from "react-router-dom";
 
-const apiURL = config.apiURL;
+const apiURL = "http://localhost:3000";
 const tokenProperty = "token";
 
 
 async function login(user) {
   const response = await http.post(apiURL + "/login", {
-    ...user,});
+    ...user,
+  });
   const token = response.headers["x-auth-token"];
   localStorage.setItem(tokenProperty, token);
+  toast.info("User Logged")
 
   return jwt_decode(token);
 }

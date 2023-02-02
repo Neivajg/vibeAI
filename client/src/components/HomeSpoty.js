@@ -1,14 +1,11 @@
-
-import React, { useState, useEffect } from 'react';
-import "./styles/home_styles.css"
+import React, { useState, useEffect } from 'react'
+import "../styles/styles.css";
 import { setClientToken } from "../spotifyAuth/spotify"
 import { loginEndpoint } from "../spotifyAuth/spotify"
 import "../spotifyAuth/views/login.css"
-import SpotifyArtist from './SpotifyArtist';
+import FormArtists from './FormArtists'
 
-
-
-const Home = () => {
+const HomeSpoty = () => {
   const [token, setToken] = useState("");
 
   useEffect(() => {
@@ -27,10 +24,14 @@ const Home = () => {
 
   }, []);
 
+  setTimeout(() => {
+    window.localStorage.removeItem("spotyToken");
+    window.location.reload(true)
+  }, 1000 * 60 * 25);
+
 
   return !token ? (
     <>
-      <h2>ADIOS!</h2>
       <div className="login-page">
         <img
           src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
@@ -44,11 +45,11 @@ const Home = () => {
     </>
   ) : (
     <>
-      <SpotifyArtist />
+      <FormArtists />
+
     </>
   )
 
 };
 
-export default Home;
-
+export default HomeSpoty;

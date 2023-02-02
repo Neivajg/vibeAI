@@ -2,126 +2,55 @@
 
 :root {
     font-family: 'Montserrat', sans-serif;
-    color: black;
-    /* --main-bg-color: #525DAD; */
+    color: var(--color1);
     --main-bg-color: #181629;
+    --color1: #140F07;
+    --color2: #0E2951;
+    --color3: #3561B9;
+    --color4: #76A6FE;
+    --color5: #CEF2F7;
 }
 
 body {
-    background-color: var(--main-bg-color);
+    background-color: var(--color2);
 }
 
-.body {
+.bodyLanding {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
+    background-image: url(../assets/landing_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    position: relative;
 }
 
-.card {
+.cardLanding {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 50%;
-    height: fit-content;
-    margin-top: 5%;
+    max-height: 65%;
     padding: 50px;
     border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
 }
 
 .title {
     text-align: center;
     font-size: 40px;
+    color: var(--color1);
 }
 
 .text {
     text-align: center;
     margin: 20px 0 20px 0;
+    color: var(--color1);
+    font-size: 18px;
 }
 
-.button {
-    background-color: #681E86;
-    color: white;
-    font-size: 20px;
-    margin-top: 10px;
-    padding: 15px 40px 15px 40px;
-    border-radius: 50px;
-    width: fit-content;
-    cursor: pointer;
-}
-
-/* boton start now */
-
-/* .landingButton {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-}
-
-.landingButton {
-    --primary-color: #111;
-    --hovered-color: #c84747;
-    position: relative;
-    display: flex;
-    font-weight: 600;
-    font-size: 20px;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.landingButton p {
-    margin: 0;
-    position: relative;
-    font-size: 20px;
-    color: var(--primary-color)
-}
-
-.landingButton::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    left: 0;
-    bottom: -7px;
-    background: var(--hovered-color);
-    height: 2px;
-    transition: 0.3s ease-out;
-}
-
-.landingButton p::before {
-    position: absolute;
-      box-sizing: border-box;
-    content: "Start Now";
-    width: 0%;
-    inset: 0;
-    color: var(--hovered-color);
-    overflow: hidden;
-    transition: 0.3s ease-out;
-}
-
-.landingButton:hover::after {
-    width: 100%;
-}
-
-.landingButton:hover p::before {
-    width: 100%;
-}
-
-.landingButton:hover svg {
-    transform: translateX(4px);
-    color: var(--hovered-color)
-}
-
-.landingButton svg {
-    color: var(--primary-color);
-    transition: 0.2s;
-    position: relative;
-    width: 15px;
-    transition-delay: 0.2s;
-} */
-
+/* boton start */
 .landingButton {
     display: flex;
     align-items: center;
@@ -129,13 +58,14 @@ body {
     font-weight: 600;
     font-size: 20px;
     padding: 0.8em 1.3em 0.8em 0.9em;
-    color: black;
-    background: #ad5389;
-    background: linear-gradient(to right, #ccd141, #e1ef4f, #ccdc52);
+    margin-top: 20px;
+    color: var(--color1);
+    background: linear-gradient(to right, var(--color5), var(--color4), var(--color4));
     /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
     border: none;
     letter-spacing: 0.05em;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 .landingButton svg {
@@ -154,4 +84,95 @@ body {
 
 .landingButton:hover span {
     transform: translateX(7px);
+}
+
+/* logo */
+#logoLanding {
+    width: 10%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+/* segunda pagina */
+.bottomLanding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.bottomLanding h2 {
+    color: var(--color2);
+    font-size: 30px;
+    margin: 5% 0 50px;
+}
+
+.stepsCont {
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 30px;
+    color: white;
+    background-color: rgb(54, 54, 54);
+    border-radius: 10px;
+}
+
+.steps h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.steps p {
+    text-align: center;
+}
+
+.arrow {
+    width: 25px;
+    fill: var(--color2);
+}
+
+/* .allLanding {
+    margin-bottom: 200px;
+} */
+
+.textLanding {
+    text-align: center;
+    width: 75%;
+    margin-bottom: 100px;
+}
+
+.textLanding p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 769px){
+    .text {
+        text-align: center;
+        margin: 2px;
+        color: var(--color1);
+        font-size: 12px;
+    }
+
+    .bodyLanding {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bottomLanding h2 {
+        font-size: 25px;
+        margin: 80px 50px; 
+    }
+  
+ 
 }

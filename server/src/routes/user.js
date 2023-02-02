@@ -1,69 +1,37 @@
-//RUTAS DE USERS
-
 const express = require('express')
 const winston = require('winston')
-const bcrypt = require("bcrypt");
-const {User , validateBody} = require('../models/user_model')
+const { User, validateBody } = require('../models/user_model')
 const validator = require("../middleware/joiValidator");
 const router = express.Router()
 const Joi = require("joi");
 
+//EDITAR DATOS DE USUARIO
 
-const reqSchema = Joi.object({
-    email: Joi.string()
-      .required()
-      .email()
-      .messages({ "any.required": `El campo "email" es requerido` }),
-    password: Joi.string()
-      .required()
-      .messages({ "any.required": `El campo "password" es requerido` }),
-  });
-
-router.post("/", validator(reqSchema), async (req, res) => {
-  
-    let user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).send("Email y password invalidos");
-  
-    const isValid = await bcrypt.compare(req.body.password, user.password);
-    if (!isValid) return res.status(400).send("Email y password invalidos");
-  
-    const token = user.generateToken();
-    res
-      .header("x-auth-token", token)
-      .header("access-control-expose-headers", "x-auth-token")
-      .send("Usuario autentificado");
-  });
-
-//CREAR NUEVO USUARIO
-router.post('/create', validateBody, async (req, res) => {
-    let user = await Users.findOne({email: req.body.email});
-    if (user) return res.status(400).send("Ya existe un usuario registrado con ese nombre o e-mail.");
-
-
-    user = new Users(req.body); 
-
-    const salt = await bcrypt.genSalt(10);
-    console.log(salt)
-    const hash = await bcrypt.hash(user.password, salt);
-
-    user.password = hash;
-    await user.save()
-    
-    const token = user.generateToken();
-    res
-      .header("x-auth-token", token)
-      .header("access-control-expose-headers", "x-auth-token")
-      .send('Nuevo/a usuario/a en la la base de datos.');
-
-});
-
-//EDITAR USUARIO
 router.put('/edit/:email', async (req, res) => {
-    const user = await Users.findOneAndUpdate({id: req.params.email}, req.body)
-    res.send(user)
-    winston.info(`Editado: ${req.params.email}`)
+
+  const user = await User.findOneAndUpdate({ email: req.params.email }, req.body)
+  res.send(user)
+  winston.info(`Usuario editado: ${req.params.email}`)
 })
 
+// AÑADIR BUSQUEDAS REALIZADAS EN LA WEB 
 
+router.put('/add-recommendation/:email', async (req, res) => {
+  console.log(req.body)
+
+  const user = await User.findOneAndUpdate({email: req.params.email}, {$push: {data: req.body}})
+  res.send(user)
+  winston.info(`Recomendacion añadida: ${req.params.email}`)
+})
+
+//AÑADIR BUSQUEDAS VERSION2
+
+router.put('/add-recommendationv2/:email', async (req, res) => {
+  console.log(req.body)
+
+  const user = await User.findOneAndUpdate({email: req.params.email}, {$push: {data2: req.body}})
+  res.send(user)
+  winston.info(`Recomendacion añadida: ${req.params.email}`)
+})
 
 module.exports = router
