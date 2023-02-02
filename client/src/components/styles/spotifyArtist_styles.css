@@ -1,3 +1,4 @@
+/* 
 .likeordislike {
     display: flex;
     justify-content: center;
@@ -63,7 +64,6 @@
     filter: brightness(.8);
 }
 
-/* dislike */
 
 .dislike {
     display: hidden;
@@ -122,4 +122,4 @@
 
 .dislike:active {
     filter: brightness(.8);
-}
+} */

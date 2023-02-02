@@ -18,6 +18,22 @@ const dataSchema = new mongoose.Schema({
     opinion: Boolean
 });
 
+const dataSchema2 = new mongoose.Schema({
+    user_id: String,
+    text: String,
+    gender: String,
+    ages: String,
+    music: String,
+    hobbie: String,
+    language: String,
+    recomendacion1: String,
+    recomendacion2: String,
+    recomendacion3: String,
+    opcion1: String,
+    opcion2: String,
+    opcion3: String
+});
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -44,13 +60,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    data: [dataSchema]
+    data: [dataSchema],
+    data2: [dataSchema2]
 
 });
 
 userSchema.methods.generateToken = function () {
     return jwt.sign(
-      _.pick(this, ["_id", "email", "username", "gender", "occupation", "age", "password", "data"]),
+      _.pick(this, ["_id", "email", "username", "gender", "occupation", "age", "password", "data", "data2"]),
       config.get("jwtPrivateKey")
     );
   };

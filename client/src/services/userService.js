@@ -3,7 +3,10 @@ import http from "./httpService";
 import config from "../config.json";
 import { toast } from "react-toastify";
 
-const apiURL = config.apiURL;
+const apiURL = process.env.REACT_APP_URI_BACK;
+
+console.log(apiURL)
+
 const tokenProperty = "token";
 
 

@@ -1,0 +1,130 @@
+/* estilo inputs */
+.inputArtist2 {
+    display: grid;
+    grid-template-columns: 200px 175px 175px;
+    grid-template-rows: 80px 80px;
+    column-gap: 50px;
+    row-gap: 15px;
+    align-items: center;
+}
+
+.input2 {
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px 4px #ffffff,
+        -2px -2px 4px #c5c5c5;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.input2:focus {
+    outline-color: white;
+    place-content: "Artist";
+}
+
+.mixUpBtn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--color1);
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 40px 40px 40px 40px;
+    padding: 16px 24px 16px 28px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -4px -2px 5px 0px #ffffff, 4px 2px 5px 0px rgb(95 157 231 / 48%);
+    cursor: pointer;
+    margin: 50px 0 40px;
+}
+
+.mixUpBtn2:hover {
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 4px 0px #ffffff, 2px 1px 4px 0px rgb(95 157 231 / 48%);
+}
+
+.mixUpBtn2:active {
+    box-shadow: none;
+}
+
+/* recomendaciones */
+.recCont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.recTitle {
+    color: var(--color5);
+    font-size: 20px;
+    text-align: center;
+}
+
+.spotiCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.spotiCards h4 {
+    color: white;
+    margin: 40px 0 20px;
+    text-align: center;
+    max-width: 300px;
+    font-size: 14px;
+}
+
+.recCont form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.recRadio {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 20px 0 20px;
+}
+
+.recBtn {
+    background-color: var(--color5);
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: .5rem;
+    color: var(--color1);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: 10px 15px;
+    margin:20px 0 50px;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+.recBtn:hover {
+    background-color: var(--color3);
+}
+
+/* radio buttons  */
