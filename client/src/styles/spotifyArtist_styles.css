@@ -2,9 +2,7 @@
 .likeordislike {
     display: flex;
     justify-content: center;
-
 }
-
 .like {
     display: hidden;
     --color: #00A97F;
@@ -25,7 +23,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 .like::before,
 .like::after {
     content: '';
@@ -39,32 +36,25 @@
     background-color: var(--color);
     transition: 1s ease;
 }
-
 .like::before {
     top: -1em;
     left: -1em;
 }
-
 .like::after {
     left: calc(100% + 1em);
     top: calc(100% + 1em);
 }
-
 .like:hover::before,
 .like:hover::after {
     height: 410px;
     width: 410px;
 }
-
 .like:hover {
     color: rgb(10, 25, 30);
 }
-
 .like:active {
     filter: brightness(.8);
 }
-
-
 .dislike {
     display: hidden;
     --color: #a90000;
@@ -85,7 +75,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 .dislike::before,
 .dislike::after {
     content: '';
@@ -99,27 +88,22 @@
     background-color: var(--color);
     transition: 1s ease;
 }
-
 .dislike::before {
     top: -1em;
     left: -1em;
 }
-
 .dislike::after {
     left: calc(100% + 1em);
     top: calc(100% + 1em);
 }
-
 .dislike:hover::before,
 .dislike:hover::after {
     height: 410px;
     width: 410px;
 }
-
 .dislike:hover {
     color: rgb(10, 25, 30);
 }
-
 .dislike:active {
     filter: brightness(.8);
 } */

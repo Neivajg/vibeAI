@@ -8,10 +8,10 @@
 
 .cardProfile {
     width: 280px;
-    height: 180px;
     background: white;
     border-radius: 15px;
     box-shadow: 0px 0px 5px 1px white;
+    padding-bottom: 5px;
     margin-left: 25px;
     margin-right: 25px;
     text-align: center;
@@ -24,6 +24,31 @@
     text-align: center;
 }
 
+.option-selected {
+    background-color: rgb(134, 224, 134);
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.details-card{
+    background-color: var(--color4);
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+    border-radius: 10px;
+}
+
+.recommendations-card{
+    background-color: var(--color4);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+    border-radius: 10px;
+}
 /* boton de edit */
 #btnEdit {
     appearance: none;
@@ -66,6 +91,10 @@
 #btnEdit:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+.input-title{
+    margin-bottom: -10px;
 }
 
 /* formulario */

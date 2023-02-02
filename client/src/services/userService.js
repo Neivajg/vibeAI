@@ -5,8 +5,6 @@ import { toast } from "react-toastify";
 
 const apiURL = process.env.REACT_APP_URI_BACK;
 
-console.log(apiURL)
-
 const tokenProperty = "token";
 
 

@@ -14,13 +14,15 @@ h1 {
     position: relative;
     width: 196px;
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .inputbox input {
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
-    margin-top: 35px;
     background: transparent;
     outline: none;
     box-shadow: none;
@@ -30,6 +32,10 @@ h1 {
     letter-spacing: 0.05em;
     transition: 0.5s;
     z-index: 10;
+}
+
+.inputbox.emailinput {
+    margin-bottom: 15px;
 }
 
 .inputbox span {

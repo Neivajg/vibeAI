@@ -1,4 +1,5 @@
 import React from 'react'
+import marcelo1 from '../assets/FullStack/Marcelo.jpeg'
 import marcelo from '../assets/FullStack/Marcelo.png'
 import genesis from '../assets/Data/Genesis.png'
 import guillermo from '../assets/Data/Guillermo.png'
@@ -31,7 +32,7 @@ const AboutUs = () => {
 
         <div className="card">
           <div className="img">
-            <img src={marcelo} alt='Marcelo Velasco'></img>
+            <img src={marcelo1} alt='Marcelo Velasco'></img>
           </div>
           <span> Marcelo Velasco</span>
           <a href='https://www.linkedin.com/in/marcelovelasco/' target="_blank"></a>

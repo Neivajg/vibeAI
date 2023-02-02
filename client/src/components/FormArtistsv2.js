@@ -3,12 +3,10 @@ import Spotify from "react-spotify-embed";
 import "../styles/home.css"
 import "../styles/login.css"
 import "../styles/home_v2.css"
-import "../assets/wrong.svg"
-import "../assets/check.svg"
 import user from "../services/userService"
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import "./styles/buttonsV2.css"
+import "../styles/buttonsV2.css"
 
 
 const SignUp = () => {
@@ -238,6 +236,26 @@ const SignUp = () => {
                         <form>
                             <legend>Please, choose your favourite recommendation:</legend>
                             <div className='recRadio'>
+                                <label for="f-option" class="l-radio">
+                                <input type="radio" id="f-option" name="selector" tabindex="1" value="opcion1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>#1</span></label>
+                                <label for="s-option" class="l-radio">
+                                <input type="radio" id="s-option" name="selector" tabindex="2" value="opcion2" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>#2</span></label>
+                                <label for="t-option" class="l-radio">
+                                <input type="radio" id="t-option" name="selector" tabindex="3" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>#3</span></label>
+                            </div>
+                            <div className='recRadio'>
+
+
+
+
+
+
+                                <label for="f-option" class="l-radio">
+                                <input type="radio" id="f-option" name="selector" tabindex="1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>Primero</span></label>
 
 
 

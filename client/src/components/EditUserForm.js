@@ -54,14 +54,14 @@ const EditUserForm = () => {
                 <div className='ContainerProfile'>
                 {users2.reverse().map((e) => (
                         <div className='cardProfile'>
-                            <h3>Details:</h3>
+                            <h3 className='details-card'>Details:</h3>
                             <h4>Text: {e.text}</h4>
                             <h4>Age: {e.ages}</h4>
                             <h4>Music genre: {e.music}</h4>
                             <h4>Hobbie: {e.hobbie}</h4>
                             <h4>Language: {e.language}</h4>
 
-                            <h3>Recommendation:</h3>
+                            <h3 className='recommendations-card'>Recommendations:</h3>
                             {e.opcion1 === "true"? <h4 className='option-selected'> 1: {e.recomendacion1}</h4> : <h4> 1: {e.recomendacion1}</h4>}
                             {e.opcion2 === "true"? <h4 className='option-selected'> 2: {e.recomendacion2}</h4> : <h4> 2: {e.recomendacion1}</h4>}
                             {e.opcion3 === "true"? <h4 className='option-selected'> 3: {e.recomendacion3}</h4> : <h4> 3: {e.recomendacion1}</h4>}
@@ -70,10 +70,10 @@ const EditUserForm = () => {
 
                     {users.reverse().map((e) => (
                         <div className='cardProfile'>
-                            <h3>Artist/Bands</h3>
+                            <h3 className='details-card'>Artist/Bands</h3>
                             <h4>1: {e.grupo1}</h4>
                             <h4>2: {e.grupo2}</h4>
-                            <h3>Recommendations:</h3>
+                            <h3 className='recommendations-card'>Recommendations:</h3>
                             <h4> 1: {e.recomendacion1}</h4>
                             <h4> 2: {e.recomendacion2}</h4>
                             <h4> 3: {e.recomendacion3}</h4>
@@ -87,25 +87,25 @@ const EditUserForm = () => {
                 <form className='inputbox loginForm'>
                     <div className="inputbox">
                         <input autoComplete='true' type="text" id="username" name="username" onChange={(e) => setNewUsername(e.currentTarget.value)} />
-                        <span>Username</span>
+                        <span className='input-title'>Username</span>
                         <i></i>
                     </div>
 
                     <div className="inputbox">
                         <input autoComplete='true' type="email" id="email" name="email" onChange={(e) => setNewEmail(e.currentTarget.value)} />
-                        <span>Email</span>
+                        <span className='input-title'>Email</span>
                         <i></i>
                     </div>
 
                     <div className="inputbox">
                         <input autoComplete='true' type="password" id="password" name="password" onChange={(e) => setNewPassword(e.currentTarget.value)} />
-                        <span>Password</span>
+                        <span className='input-title'>Password</span>
                         <i></i>
                     </div>
 
                     <div className="inputbox">
                         <input autoComplete='true' type="password" id="password2" name="password" onChange={(e) => setNewPassword2(e.currentTarget.value)} />
-                        <span>Repeat password</span>
+                        <span className='input-title'>Repeat password</span>
                         <i></i>
                     </div>
 

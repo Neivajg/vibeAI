@@ -2,7 +2,6 @@ import apiClient from "../spotifyAuth/spotify";
 import { useEffect, useState } from "react";
 import Spotify from "react-spotify-embed";
 import "../assets/check.svg"
-import "./styles/spotifyArtist_styles.css"
 import "../assets/wrong.svg"
 
 
