@@ -23,7 +23,7 @@ const EditUserForm = () => {
         newUsername === "" && setNewUsername(user.getCurrentUser().username)
         newEmail === "" && setNewEmail(user.getCurrentUser().email)
 
-        fetch(`https://vibeai-jbmr.onrender.com/user/edit/${user.getCurrentUser().email}`,
+        fetch(`http://localhost:3000/user/edit/${user.getCurrentUser().email}`,
             {
                 method: 'PUT',
                 headers: {

@@ -5,6 +5,7 @@ import "../assets/wrong.svg"
 import "../assets/check.svg"
 import user from "../services/userService"
 import Spinner from "../components/Spinner"
+import axios from 'axios'
 
 import "../styles/home.css"
 
@@ -36,7 +37,7 @@ const SignUp = () => {
         const { Configuration, OpenAIApi } = require("openai");
         const configuration = new Configuration({
 
-            apiKey: "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",
+            apiKey: "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",
 
         });
         const openai = new OpenAIApi(configuration);
@@ -52,31 +53,45 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        fetch(`https://vibeai-jbmr.onrender.com/user/add-recommendation/${user.getCurrentUser().email}`,
+        axios.put(`http://localhost:3000/user/add-recommendation/${user.getCurrentUser().email}`,
+        {
+            grupo1: grupo1,
+            grupo2: grupo2,
+            recomendacion1: recomendacion1,
+            recomendacion2: recomendacion2,
+            recomendacion3: recomendacion3,
+            opinion: e.currentTarget.value
+        })
+        .then((data) => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        })
 
-            fetch(`http://musicrec-env.eba-tvtntc4p.us-east-1.elasticbeanstalk.com/bbdd`,
+        fetch(`http://musicrec-env.eba-tvtntc4p.us-east-1.elasticbeanstalk.com/bbdd`,
 
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        _id: user.getCurrentUser()._id,
-                        username: user.getCurrentUser().username,
-                        email: user.getCurrentUser().email,
-                        sexo: user.getCurrentUser().gender,
-                        ocupacion: user.getCurrentUser().occupation,
-                        data: user.getCurrentUser().data[user.getCurrentUser().data.length]
-                    }),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Success:', data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                }))
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    _id: user.getCurrentUser()._id,
+                    username: user.getCurrentUser().username,
+                    email: user.getCurrentUser().email,
+                    sexo: user.getCurrentUser().gender,
+                    ocupacion: user.getCurrentUser().occupation,
+                    data: user.getCurrentUser().data[user.getCurrentUser().data.length]
+                }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            })
         window.location.reload()
     }
 
