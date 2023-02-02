@@ -24,4 +24,14 @@ router.put('/add-recommendation/:email', async (req, res) => {
   winston.info(`Recomendacion añadida: ${req.params.email}`)
 })
 
+//AÑADIR BUSQUEDAS VERSION2
+
+router.put('/add-recommendationv2/:email', async (req, res) => {
+  console.log(req.body)
+
+  const user = await User.findOneAndUpdate({email: req.params.email}, {$push: {data2: req.body}})
+  res.send(user)
+  winston.info(`Recomendacion añadida: ${req.params.email}`)
+})
+
 module.exports = router

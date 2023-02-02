@@ -8,6 +8,7 @@ import Logout from "../components/Logout";
 import AboutUs from "../pages/aboutUs"
 import Profile from "../pages/profile"
 import ProtectedRoute from "../utils/ProtectedRoute";
+import FormArtistv2 from "../components/FormArtistsv2"
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <ProtectedRoute isAllowed={"isAuth"}><Home /></ProtectedRoute>
+      },
+      {
+        path: "/v2",
+        element: <ProtectedRoute isAllowed={"isAuth"}><FormArtistv2 /></ProtectedRoute>
       },
       {
         path: "/login",

@@ -1,5 +1,4 @@
 {
-  "apiURL": "http://localhost:3000",
   "toastErrorOptions": {
     "position": "top-right",
     "autoClose": 5000,

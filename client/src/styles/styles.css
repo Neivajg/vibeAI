@@ -2,8 +2,7 @@
 
 :root {
     font-family: 'Montserrat', sans-serif;
-    color: black;
-    /* --main-bg-color: #525DAD; */
+    color: var(--color1);
     --main-bg-color: #181629;
     --color1: #140F07;
     --color2: #0E2951;
@@ -13,7 +12,6 @@
 }
 
 body {
-    /* background-color: var(--main-bg-color); */
     background-color: var(--color2);
 }
 
@@ -22,24 +20,21 @@ body {
     /* justify-content: center; */
     align-items: center;
     height: 100vh;
-    background-image: url(../utils/landing_bg.png);
+    background-image: url(../assets/landing_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
+    position: relative;
 }
 
 .cardLanding {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* min-width: 40%; */
     width: 50%;
-    max-height: 50%;
-    /* height: fit-content; */
+    max-height: 65%;
     padding: 50px;
     border-radius: 30px;
-    /* background: #e0e0e0;
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; */
 }
 
 .title {
@@ -55,16 +50,7 @@ body {
     font-size: 18px;
 }
 
-/* .button {
-    color: white;
-    font-size: 20px;
-    margin-top: 10px;
-    padding: 15px 40px 15px 40px;
-    border-radius: 50px;
-    width: fit-content;
-    cursor: pointer;
-} */
-
+/* boton start */
 .landingButton {
     display: flex;
     align-items: center;
@@ -72,6 +58,7 @@ body {
     font-weight: 600;
     font-size: 20px;
     padding: 0.8em 1.3em 0.8em 0.9em;
+    margin-top: 20px;
     color: var(--color1);
     background: linear-gradient(to right, var(--color5), var(--color4), var(--color4));
     /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
@@ -97,4 +84,95 @@ body {
 
 .landingButton:hover span {
     transform: translateX(7px);
+}
+
+/* logo */
+#logoLanding {
+    width: 10%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+/* segunda pagina */
+.bottomLanding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.bottomLanding h2 {
+    color: var(--color2);
+    font-size: 30px;
+    margin: 5% 0 50px;
+}
+
+.stepsCont {
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 30px;
+    color: white;
+    background-color: rgb(54, 54, 54);
+    border-radius: 10px;
+}
+
+.steps h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.steps p {
+    text-align: center;
+}
+
+.arrow {
+    width: 25px;
+    fill: var(--color2);
+}
+
+/* .allLanding {
+    margin-bottom: 200px;
+} */
+
+.textLanding {
+    text-align: center;
+    width: 75%;
+    margin-bottom: 100px;
+}
+
+.textLanding p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 769px){
+    .text {
+        text-align: center;
+        margin: 2px;
+        color: var(--color1);
+        font-size: 12px;
+    }
+
+    .bodyLanding {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bottomLanding h2 {
+        font-size: 25px;
+        margin: 80px 50px; 
+    }
+  
+ 
 }

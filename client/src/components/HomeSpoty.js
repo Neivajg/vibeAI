@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import "../styles/styles.css";
 import { setClientToken } from "../spotifyAuth/spotify"
 import { loginEndpoint } from "../spotifyAuth/spotify"
 import "../spotifyAuth/views/login.css"
 import FormArtists from './FormArtists'
-
-
 
 const HomeSpoty = () => {
   const [token, setToken] = useState("");

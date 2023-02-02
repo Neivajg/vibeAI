@@ -29,9 +29,8 @@ const SignUp = () => {
     const handleForm = async (e) => {
 
         e.preventDefault()
-        console.log(account)
-
-        password === password2 ? await user.register(account).then(navigate("/home")) : toast.warning("Passwords must match!")
+        if(username && email && password && password2 && age && occupation && gender !== "") {password === password2 ? await user.register(account).then(navigate("/login")) : toast.warning("Passwords must match!")} 
+        else { toast.warning("Some information is missing")}
     }
 
     
@@ -70,13 +69,22 @@ const SignUp = () => {
 
                         <div className="formRegister1">
                             <div className="inputbox">
-                                <input type="number" name="age" placeholder="Age (e.g. 25)" min="18" max="90" onChange={(e) => setAge(parseInt(e.currentTarget.value))} />
+                                {/* <input type="number" name="age" placeholder="Age (e.g. 25)" min="18" max="90" onChange={(e) => setAge(parseInt(e.currentTarget.value))} /> */}
+                                <input type="number" name="age" placeholder="Between 18 and 100 years." min="18" max="100" 
+                                    onChange={(e) => {
+                                    const age = parseInt(e.currentTarget.value);
+                                    if (age >= 18 && age <= 100) {
+                                        setAge(age);
+                                    } else {
+                                        toast.error("The age must be between 18 and 100 years.");
+                                    }
+                                    }} />
                                 <span>Age</span>
                                 <i></i>
                             </div>
 
-                            <div className='select-input'>
-                                <span>Occupation</span>
+                            <div className='select-input box'>
+                                {/* <span>Occupation</span> */}
                                 <select name="occupation" id="occupation" onChange={(event) => setOccupation(event.currentTarget.value)}>
                                     <option value="null" selected disabled>Select occupation:</option>
                                     <option name="Employed" value="Employed">Employed</option>
@@ -88,8 +96,8 @@ const SignUp = () => {
                                 </select>
                             </div>
 
-                            <div className='select-input'>
-                                <span>Gender</span>
+                            <div className='select-input box'>
+                                {/* <span>Gender</span> */}
                                 <select name="gender" id="gender" onChange={(event) => setGender(event.currentTarget.value)}>
                                     <option value="null" selected disabled>Select Gender:</option>
                                     <option name="Male" value="Male">Male</option>

@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeSpoty from "../components/HomeSpoty";  
+import HomeSpoty from "../components/HomeSpoty"
 
 
 const Home = () => {
