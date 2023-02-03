@@ -63,8 +63,8 @@ const EditUserForm = () => {
 
                             <h3 className='recommendations-card'>Recommendations:</h3>
                             {e.opcion1 === "true"? <h4 className='option-selected'> 1: {e.recomendacion1}</h4> : <h4> 1: {e.recomendacion1}</h4>}
-                            {e.opcion2 === "true"? <h4 className='option-selected'> 2: {e.recomendacion2}</h4> : <h4> 2: {e.recomendacion1}</h4>}
-                            {e.opcion3 === "true"? <h4 className='option-selected'> 3: {e.recomendacion3}</h4> : <h4> 3: {e.recomendacion1}</h4>}
+                            {e.opcion2 === "true"? <h4 className='option-selected'> 2: {e.recomendacion2}</h4> : <h4> 2: {e.recomendacion2}</h4>}
+                            {e.opcion3 === "true"? <h4 className='option-selected'> 3: {e.recomendacion3}</h4> : <h4> 3: {e.recomendacion3}</h4>}
                         </div>
                     ))}
 

@@ -59,7 +59,7 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        axios.put(`http://localhost:3000/${user.getCurrentUser().email}`,
+        axios.put(`http://localhost:3000/user/add-recommendationv2/${user.getCurrentUser().email}`,
             {
                 text: text,
                 gender: gender,
@@ -245,7 +245,7 @@ const SignUp = () => {
                                 <input type="radio" id="t-option" name="selector" tabindex="3" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
                                 <span>#3</span></label>
                             </div>
-                            <div className='recRadio'>
+                            {/* <div className='recRadio'>
                                 <label>1</label>
                                 <input type="radio" id="opcion1" name="opcion" value="opcion1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
 
@@ -255,7 +255,7 @@ const SignUp = () => {
                                 <label>3</label>
                                 <input type="radio" id="opcion3" name="opcion" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
 
-                            </div>
+                            </div> */}
 
                             <div>
                                 <button onClick={(e) => { handleRecommendation(e) }} className="recBtn">Share</button>
