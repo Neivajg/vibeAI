@@ -60,7 +60,7 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        axios.put(`https://vibeai-jbmr.onrender.com/user/add-recommendationv2/${user.getCurrentUser().email}`,
+        axios.put(`http://localhost:3000/user/add-recommendationv2/${user.getCurrentUser().email}`,
             {
                 text: text,
                 gender: gender,
@@ -246,7 +246,9 @@ const SignUp = () => {
                                 <input type="radio" id="t-option" name="selector" tabindex="3" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
                                 <span>#3</span></label>
                             </div>
+
                             <div className='recRadio'>
+
 
 
 
@@ -274,7 +276,7 @@ const SignUp = () => {
                                 <input type="radio" id="t-option" name="selector" tabindex="3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
                                 <span>Tercero</span></label>
 
-                            </div>
+                            </div> */}
 
                             <div>
                                 <button onClick={(e) => { handleRecommendation(e) }} className="recBtn">Share</button>
