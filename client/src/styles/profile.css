@@ -5,7 +5,6 @@
     row-gap: 30px;
     margin-top: 30px;
 }
-
 .cardProfile {
     width: 280px;
     background: white;
@@ -16,21 +15,18 @@
     margin-right: 25px;
     text-align: center;
 }
-
 .tituloSaludo {
     width: 100%;
     margin: 3% 0 3% 0;
     color: var(--color5);
     text-align: center;
 }
-
 .option-selected {
     background-color: rgb(134, 224, 134);
     border-radius: 5px;
     margin: 0 auto;
     width: 90%;
 }
-
 .details-card{
     background-color: var(--color4);
     margin-top: 3px;
@@ -39,7 +35,6 @@
     width: 97%;
     border-radius: 10px;
 }
-
 .recommendations-card{
     background-color: var(--color4);
     margin-top: 5px;
@@ -76,27 +71,22 @@
     will-change: transform;
     grid-area: btn;
 }
-
 #btnEdit:disabled {
     pointer-events: none;
 }
-
 #btnEdit:hover {
     color: var(--color5);
     background-color: var(--color3);
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
-
 #btnEdit:active {
     box-shadow: none;
     transform: translateY(0);
 }
-
 .input-title{
     margin-bottom: -10px;
 }
-
 /* formulario */
 .login-title {
     color: white;
@@ -107,7 +97,6 @@
     margin: 2%;
     padding: 15px;
 }
-
 .loginForm {
     width: 50%;
     display: grid;

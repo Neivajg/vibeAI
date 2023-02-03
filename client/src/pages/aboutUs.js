@@ -7,6 +7,8 @@ import dani from '../assets/FullStack/Dani.jpg'
 import antonio from '../assets/Data/Antonio.png'
 import ruben from '../assets/FullStack/Ruben.jpg'
 import mariaAngeles from '../assets/Data/MariaAngeles.jpg'
+import rafa from "../assets/FullStack/foto_Rafa.jpeg"
+import neiva from "../assets/FullStack/neiva.jpg"
 
 import "../styles/aboutUs.css"
 
@@ -43,7 +45,7 @@ const AboutUs = () => {
 
         <div className="card">
           <div className="img">
-            <img src={marcelo} alt='Neiva Jiménez'></img>
+            <img src={neiva} alt='Neiva Jiménez'></img>
           </div>
           <span> Neiva Jiménez</span>
           <a href='https://www.linkedin.com/in/neiva-jim%C3%A9nez-gonz%C3%A1lez' target="_blank"></a>
@@ -54,7 +56,7 @@ const AboutUs = () => {
 
         <div className="card">
           <div className="img">
-            <img src={marcelo} alt=' Rafa Cabezas'></img>
+            <img src={rafa} alt=' Rafa Cabezas'></img>
           </div>
           <span> Rafa Cabezas</span>
           <a href='https://www.linkedin.com/in/rafael-cabezas-aranda-398439249/' target="_blank"> </a>

@@ -6,6 +6,7 @@ import "../styles/home_v2.css"
 import user from "../services/userService"
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import "../styles/buttonsV2.css"
 
 
 const SignUp = () => {
@@ -59,7 +60,7 @@ const SignUp = () => {
 
     const handleRecommendation = async (e) => {
 
-        axios.put(`https://vibeai-jbmr.onrender.com/user/add-recommendationv2/${user.getCurrentUser().email}`,
+        axios.put(`http://localhost:3000/user/add-recommendationv2/${user.getCurrentUser().email}`,
             {
                 text: text,
                 gender: gender,
@@ -82,34 +83,34 @@ const SignUp = () => {
             })
 
         await axios.post(`http://dbmusic.cb2wgp0ktb7z.us-east-1.rds.amazonaws.com/`,
-        {
-            _id: user.getCurrentUser()._id,
-            username: user.getCurrentUser().username,
-            email: user.getCurrentUser().email,
-            sexo: user.getCurrentUser().gender,
-            ocupacion: user.getCurrentUser().occupation,
-            text: text,
-            gender: gender,
-            ages: ages,
-            music: musicGenre,
-            hobbie: hobbie,
-            language: language,
-            data: {
-                recomendacion1: recomendacion1,
-                recomendacion2: recomendacion2,
-                recomendacion3: recomendacion3,
-                opcion1: opcion1,
-                opcion2: opcion2,
-                opcion3: opcion3
-            }
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        })
+            {
+                _id: user.getCurrentUser()._id,
+                username: user.getCurrentUser().username,
+                email: user.getCurrentUser().email,
+                sexo: user.getCurrentUser().gender,
+                ocupacion: user.getCurrentUser().occupation,
+                text: text,
+                gender: gender,
+                ages: ages,
+                music: musicGenre,
+                hobbie: hobbie,
+                language: language,
+                data: {
+                    recomendacion1: recomendacion1,
+                    recomendacion2: recomendacion2,
+                    recomendacion3: recomendacion3,
+                    opcion1: opcion1,
+                    opcion2: opcion2,
+                    opcion3: opcion3
+                }
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            })
     }
 
     return (
@@ -245,17 +246,37 @@ const SignUp = () => {
                                 <input type="radio" id="t-option" name="selector" tabindex="3" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
                                 <span>#3</span></label>
                             </div>
+
                             <div className='recRadio'>
-                                <label>1</label>
-                                <input type="radio" id="opcion1" name="opcion" value="opcion1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
 
-                                <label>2</label>
-                                <input type="radio" id="opcion2" name="opcion" value="opcion2" onClick={(e) => { handleOption(e.currentTarget.value) }} />
 
-                                <label>3</label>
-                                <input type="radio" id="opcion3" name="opcion" value="opcion3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
 
-                            </div>
+
+
+
+
+                                <label for="f-option" class="l-radio">
+                                <input type="radio" id="f-option" name="selector" tabindex="1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>Primero</span></label>
+
+
+
+
+
+
+                                <label for="f-option" class="l-radio">
+                                <input type="radio" id="f-option" name="selector" tabindex="1" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>Primero</span></label>
+
+                                <label for="s-option" class="l-radio">
+                                <input type="radio" id="s-option" name="selector" tabindex="2" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>Segundo</span></label>
+
+                                <label for="t-option" class="l-radio">
+                                <input type="radio" id="t-option" name="selector" tabindex="3" onClick={(e) => { handleOption(e.currentTarget.value) }} />
+                                <span>Tercero</span></label>
+
+                            </div> */}
 
                             <div>
                                 <button onClick={(e) => { handleRecommendation(e) }} className="recBtn">Share</button>
